@@ -15,7 +15,7 @@ blocksBody.addEventListener('click', (e) => {
                 blocks[index].querySelector('.block-number').textContent = blocks[index - 1].querySelector('.block-number').textContent
                 blocks[index - 1].querySelector('.block-number').textContent = num
             }
-            if (e.target.closest('.right') && index < 24 ) {
+            if (e.target.closest('.right') && index < 24) {
                 blocks[index].querySelector('.block-number').textContent = blocks[index + 1].querySelector('.block-number').textContent
                 blocks[index + 1].querySelector('.block-number').textContent = num
             }
@@ -29,4 +29,11 @@ blocksBody.addEventListener('click', (e) => {
             }
         }
     })
+})
+
+resetBtn.addEventListener('click', () => {
+    blocks.forEach((elem, index) => {
+        blocks[index].querySelector('.block-number').textContent = index
+    })
+    return blocks
 })
